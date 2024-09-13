@@ -1,5 +1,8 @@
 /* SASS: 변수, 함수, 조건문, 반복문 존재 */
 
+// @use: 다른 파일의 내용 가져오기
+@use "reset";
+
 // 변수
 $main-color: #2a4cb2;
 $standard-size: 16px;
@@ -10,7 +13,7 @@ $standard-size: 16px;
 }
 
 .box {
-  background-color: $main-color;
+  background-color: reset.$point-color;
   font-size: $standard-size + 2px;
 }
 
@@ -42,4 +45,20 @@ $standard-size: 16px;
 .btn-blue {
   @extend %btn;
   background-color: blue;
+}
+
+// @mixin 문법: 긴 코드를 짧게 축약하고, 가변적으로 생성
+@mixin fontStyle($구멍) {
+  font-size: $구멍;
+  letter-spacing: -1px;
+}
+
+h2 {
+  @include fontStyle(40px);
+}
+h3 {
+  @include fontStyle(30px);
+}
+h4 {
+  @include fontStyle(20px);
 }
