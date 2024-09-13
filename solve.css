@@ -1,0 +1,42 @@
+ul {
+  width: 400px;
+  list-style-type: none;
+}
+ul li {
+  background-color: #fff;
+  color: #111;
+  padding: 12px 5px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: 0.2s;
+}
+ul li:hover,
+ul li:focus,
+ul li:active {
+  background-color: cornflowerblue;
+  color: #fff;
+  transition: 0.2s;
+}
+ul li:first-child {
+  border-top: 1px solid #ddd;
+}
+
+.alert-yellow, .alert-pink, .alert-blue {
+  width: 600px;
+  padding: 10px 4px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.alert-blue {
+  background-color: skyblue;
+}
+
+.alert-pink {
+  background-color: pink;
+}
+
+.alert-yellow {
+  background-color: lemonchiffon;
+}/*# sourceMappingURL=solve.css.map */

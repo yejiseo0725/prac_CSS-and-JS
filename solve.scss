@@ -1,0 +1,49 @@
+// 1. 리스트 만들기
+
+ul {
+  width: 400px;
+  list-style-type: none;
+  li {
+    background-color: #fff;
+    color: #111;
+    padding: 12px 5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  li:hover,
+  li:focus,
+  li:active {
+    background-color: cornflowerblue;
+    color: #fff;
+    transition: 0.2s;
+  }
+  li:first-child {
+    border-top: 1px solid #ddd;
+  }
+}
+
+// 2. alert 만들기
+
+%alert {
+  width: 600px;
+  padding: 10px 4px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.alert-blue {
+  @extend %alert;
+  background-color: skyblue;
+}
+
+.alert-pink {
+  @extend %alert;
+  background-color: pink;
+}
+
+.alert-yellow {
+  @extend %alert;
+  background-color: lemonchiffon;
+}
