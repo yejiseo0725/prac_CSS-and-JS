@@ -26,24 +26,24 @@ ul {
 
 // 2. alert 만들기
 
-%alert {
+%alert-blue {
   width: 600px;
   padding: 10px 4px;
   box-sizing: border-box;
   color: #333;
-}
-
-.alert-blue {
-  @extend %alert;
   background-color: skyblue;
 }
 
+.alert-blue {
+  @extend %alert-blue;
+}
+
 .alert-pink {
-  @extend %alert;
+  @extend %alert-blue;
   background-color: pink;
 }
 
 .alert-yellow {
-  @extend %alert;
+  @extend %alert-blue;
   background-color: lemonchiffon;
 }

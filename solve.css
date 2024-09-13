@@ -27,9 +27,6 @@ ul li:first-child {
   padding: 10px 4px;
   box-sizing: border-box;
   color: #333;
-}
-
-.alert-blue {
   background-color: skyblue;
 }
 
