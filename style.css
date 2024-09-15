@@ -28,8 +28,8 @@
 
 .grid-container2 {
   display: grid;
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 300px 300px 300px;
 }
 
 .grid-container2 div {
@@ -55,5 +55,15 @@
       "header header header header"
       "sidebar sidebar sidebar sidebar"
       "content content content content";
+  }
+
+  .grid-container2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 70vh;
+  }
+  .grid-container2 .main-area {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
   }
 }
