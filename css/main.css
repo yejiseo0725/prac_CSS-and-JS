@@ -5,8 +5,12 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 5;
   padding: 30px;
-  display: none;
+
+  transition: ease-in-out 0.3s;
+  visibility: hidden;
+  opacity: 0;
 }
+
 .white-bg {
   background: white;
   border-radius: 5px;
@@ -17,5 +21,6 @@
   display: none;
 }
 .show {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
