@@ -64,13 +64,19 @@
 
     <script>
 
+        document.getElementById('id').addEventListener('input', function () {
+
+        });
+
+
+
         $('#login').on('click', function () {
             $('.black-bg').addClass('show');
-        })
+        });
 
         $('#close').on('click', function () {
             $('.black-bg').removeClass('show');
-        })
+        });
 
         $('form').on('submit', function (e) {
             if ($('#id').val() == "") {
@@ -84,7 +90,7 @@
                 e.preventDefault();
             }
             // e.preventDefault(); // 폼 전송 막아주기
-        })
+        });
 
     </script>
     <!-- Bootstrap -->
