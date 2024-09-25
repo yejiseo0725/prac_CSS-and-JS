@@ -20,15 +20,7 @@
 
 <body>
 
-    <div class="black-bg">
-        <div class="white-bg">
-            <h4>로그인하세요</h4>
-            <button class="btn btn-danger" id="close">닫기</button>
-        </div>
-    </div>
-
-    <!-- One Way UI Animation -->
-
+    <!-- Header -->
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-brand">Navbar</span>
@@ -37,7 +29,7 @@
             </button>
         </div>
     </nav>
-
+    <!-- Header Accordion List -->
     <ul class="list-group" id="test1">
         <li class="list-group-item">An item</li>
         <li class="list-group-item">A second item</li>
@@ -46,11 +38,29 @@
         <li class="list-group-item">And a fifth one</li>
     </ul>
 
-    <p class="hello">안녕</p>
-    <p class="hello">안녕</p>
-    <p class="hello">안녕</p>
+    <!-- Content -->
+    <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+    </div>
 
-    <button id="login">로그인</button>
+    <!-- Modal Pop-Up -->
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <!-- Form: 서버로 유저정보 전송 위해 사용 -->
+            <form action="success.html">
+                <div class="my-3">
+                    <input type="text" class="form-control" id="id">
+                </div>
+                <div class="my-3">
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
+        </div>
+    </div>
 
     <script>
 
@@ -60,6 +70,20 @@
 
         $('#close').on('click', function () {
             $('.black-bg').removeClass('show');
+        })
+
+        $('form').on('submit', function (e) {
+            if ($('#id').val() == "") {
+                alert('아이디를 입력해주세요.');
+                e.preventDefault();
+            } else if ($('#password').val() == "") {
+                alert('비밀번호를 입력해주세요.');
+                e.preventDefault();
+            } else if ($('#password').val().length < 6) {
+                alert('6자 이상 입력해주세요.');
+                e.preventDefault();
+            }
+            // e.preventDefault(); // 폼 전송 막아주기
         })
 
     </script>
