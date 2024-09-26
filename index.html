@@ -69,7 +69,9 @@
             let multiply = firstNum * secondNum;
             console.log(multiply);
 
-            if (multiply % 3 == 0) {
+            if (multiply % 9 == 0) {
+                console.log('박수박수');
+            } else if (multiply % 3 == 0) {
                 console.log('박수');
             } else {
                 console.log('통과');
@@ -82,7 +84,8 @@
         game(3, 8);
         game(5, 5);
         game(6, 7);
-        game(4, 8);
+        game(4, 9);
+        game(2, 1);
 
 
         $('#login').on('click', function () {
