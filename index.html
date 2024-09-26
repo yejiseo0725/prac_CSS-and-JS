@@ -72,7 +72,9 @@
             let sum = firstScore + secondScore;
             console.log(sum);
 
-            if (firstScore < 40 || secondScore < 40) {
+            if ((firstScore < 0 || firstScore > 100) || (secondScore < 0 || secondScore > 100)) {
+                alert('장난치지마.');
+            } else if (firstScore < 40 || secondScore < 40) {
                 console.log('불합격');
             } else if (sum >= 120) {
                 console.log('합격');
@@ -84,7 +86,8 @@
 
         didYouPass(22, 60); // 82 불합격
         didYouPass(65, 75); // 140 합격
-        didYouPass(60, 50); // 110 합격
+        didYouPass(60, 50); // 110 불합격
+        didYouPass(1999, 80); // 장난치지마
 
 
 
