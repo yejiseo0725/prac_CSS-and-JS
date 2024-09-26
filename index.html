@@ -64,6 +64,30 @@
 
     <script>
 
+        // 개론 + 민법 >= 120 이면, '합격'
+        // 개론 || 민법 < 40 이면, '불합격'
+
+        function didYouPass(firstScore, secondScore) {
+
+            let sum = firstScore + secondScore;
+            console.log(sum);
+
+            if (firstScore < 40 || secondScore < 40) {
+                console.log('불합격');
+            } else if (sum >= 120) {
+                console.log('합격');
+            } else {
+                console.log('불합격');
+            }
+
+        }
+
+        didYouPass(22, 60); // 82 불합격
+        didYouPass(65, 75); // 140 합격
+        didYouPass(60, 50); // 110 합격
+
+
+
         function game(firstNum, secondNum) {
 
             let multiply = firstNum * secondNum;
@@ -81,11 +105,11 @@
             // (첫 째 자리 + 둘 째 자리) % 0 이면, '박수'
             // 그게 아니라면 '통과' 띄우기
         }
-        game(3, 8);
-        game(5, 5);
-        game(6, 7);
-        game(4, 9);
-        game(2, 1);
+        // game(3, 8);
+        // game(5, 5);
+        // game(6, 7);
+        // game(4, 9);
+        // game(2, 1);
 
 
         $('#login').on('click', function () {
