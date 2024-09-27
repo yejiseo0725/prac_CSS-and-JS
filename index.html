@@ -23,7 +23,8 @@
     <!-- Header -->
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <span class="navbar-brand">Navbar</span>
+            <span class="navbar-brand">Keroppi Shop</span>
+            <span class="badge bg-dark">Dark 🌌</span>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -64,65 +65,34 @@
 
     <script>
 
-        // 개론 + 민법 >= 120 이면, '합격'
-        // 개론 || 민법 < 40 이면, '불합격'
+        let count = 0;
 
-        function didYouPass(firstScore, secondScore) {
+        $('.badge').on('click', function () {
+            count += 1; // 변수에 +1 하기
+            console.log(count);
 
-            let sum = firstScore + secondScore;
-            console.log(sum);
-
-            if ((firstScore < 0 || firstScore > 100) || (secondScore < 0 || secondScore > 100)) {
-                alert('장난치지마.');
-            } else if (firstScore < 40 || secondScore < 40) {
-                console.log('불합격');
-            } else if (sum >= 120) {
-                console.log('합격');
+            if (count % 2 == 0) {
+                // 'light'
+                document.querySelector('.badge').innerHTML('Light 🌅');
             } else {
-                console.log('불합격');
-            }
+                // 'dark'
+                this.innerHTML('Dark 🌌');
+            };
+        });
 
-        }
+        // Dark Mode
+        // badge 클릭수 홀수면 내부 글자를 'Light' 로 변경
+        // 클릭수 짝수면 'Dark' 
 
-        didYouPass(22, 60); // 82 불합격
-        didYouPass(65, 75); // 140 합격
-        didYouPass(60, 50); // 110 불합격
-        didYouPass(1999, 80); // 장난치지마
-
-
-
-        function game(firstNum, secondNum) {
-
-            let multiply = firstNum * secondNum;
-            console.log(multiply);
-
-            if (multiply % 9 == 0) {
-                console.log('박수박수');
-            } else if (multiply % 3 == 0) {
-                console.log('박수');
-            } else {
-                console.log('통과');
-            }
-
-            // 곱하기 결과
-            // (첫 째 자리 + 둘 째 자리) % 0 이면, '박수'
-            // 그게 아니라면 '통과' 띄우기
-        }
-        // game(3, 8);
-        // game(5, 5);
-        // game(6, 7);
-        // game(4, 9);
-        // game(2, 1);
-
-
+        // Login Modal 창 띄우기
         $('#login').on('click', function () {
             $('.black-bg').addClass('show');
         });
-
         $('#close').on('click', function () {
             $('.black-bg').removeClass('show');
         });
 
+        // Login Input 전송 받기
         $('form').on('submit', function (e) {
             if ($('#id').val() == "") {
                 alert('아이디를 입력해주세요.');
