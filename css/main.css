@@ -3,6 +3,11 @@
   background: lightgrey;
 }
 
+.dark-bg {
+  background-color: #000;
+  color: #fff;
+}
+
 .black-bg {
   width: 100%;
   height: 100%;
