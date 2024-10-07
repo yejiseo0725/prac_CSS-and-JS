@@ -70,18 +70,58 @@
 
     <script>
 
-        // 5 라는 숫자(문자) 1씩 감소 --> 1초마다
-        // 0 되면 문구 전체 hide 처리
+        let colorCount = 0;
+        $('.badge').on('click', function () {
+            colorCount += 1; // 변수에 +1 하기
+            console.log(colorCount);
 
-        var count = 5;
+            if (colorCount % 2 == 0) {
+                // 'light'
+                $('.badge').html('Light 🌅');
+                $('.main-bg').removeClass('dark-bg');
+            } else {
+                // 'dark'
+                $('.badge').html('Dark 🌌');
+                $('.main-bg').addClass('dark-bg');
+            };
+        });
 
+        // Login Modal 창 띄우기
+        $('#login').on('click', function () {
+            $('.black-bg').addClass('show');
+        });
+        $('#close').on('click', function () {
+            $('.black-bg').removeClass('show');
+        });
+
+        // Login Input 전송 받기
+        $('form').on('submit', function (e) {
+            let userEmail = $('#id').val();
+
+            // 이메일 형식 검사
+            if (/\S+@\S+\.\S+/.test(userEmail)) {
+                alert('이메일 형식이 아닙니다.');
+            }
+            if (userEmail == "") {
+                alert('아이디를 입력해주세요.');
+                e.preventDefault();
+            } else if ($('#password').val() == "") {
+                alert('비밀번호를 입력해주세요.');
+                e.preventDefault();
+            } else if ($('#password').val().length < 6) {
+                alert('비밀번호 6자 이상 입력해주세요.');
+                e.preventDefault();
+            }
+            // e.preventDefault(); // 폼 전송 막아주기
+        });
+
+        let count = 5;
         setInterval(function () {
             count -= 1;
             if (count >= 0) {
                 $("#num").html(count);
             }
         }, 1000);
-
         // 지정된 시간 후 한 번만 실행
         setTimeout(function () {
             $(".alert").hide();
@@ -118,50 +158,6 @@
                 alert('멍청이.');
             }
 
-        });
-
-        // let count = 0;
-
-        $('.badge').on('click', function () {
-            count += 1; // 변수에 +1 하기
-            console.log(count);
-
-            if (count % 2 == 0) {
-                // 'light'
-                $('.badge').html('Light 🌅');
-                $('.main-bg').removeClass('dark-bg');
-            } else {
-                // 'dark'
-                $('.badge').html('Dark 🌌');
-                $('.main-bg').addClass('dark-bg');
-            };
-        });
-
-        // Dark Mode
-        // badge 클릭수 홀수면 내부 글자를 'Light' 로 변경
-        // 클릭수 짝수면 'Dark' 
-
-        // Login Modal 창 띄우기
-        $('#login').on('click', function () {
-            $('.black-bg').addClass('show');
-        });
-        $('#close').on('click', function () {
-            $('.black-bg').removeClass('show');
-        });
-
-        // Login Input 전송 받기
-        $('form').on('submit', function (e) {
-            if ($('#id').val() == "") {
-                alert('아이디를 입력해주세요.');
-                e.preventDefault();
-            } else if ($('#password').val() == "") {
-                alert('비밀번호를 입력해주세요.');
-                e.preventDefault();
-            } else if ($('#password').val().length < 6) {
-                alert('6자 이상 입력해주세요.');
-                e.preventDefault();
-            }
-            // e.preventDefault(); // 폼 전송 막아주기
         });
 
     </script> -->
