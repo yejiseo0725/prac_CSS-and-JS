@@ -47,7 +47,7 @@
 
     <!-- 5초 후 <div>를 안 보이게 -->
     <div class="alert alert-danger">
-        5초 이내 구매시 사은품 증정!
+        <span id="num">5</span>초 이내 구매시 사은품 증정!
     </div>
 
     <!-- Modal Pop-Up -->
@@ -70,21 +70,33 @@
 
     <script>
 
+        // 5 라는 숫자(문자) 1씩 감소 --> 1초마다
+        // 0 되면 문구 전체 hide 처리
+
+        var count = 5;
+
+        setInterval(function () {
+            count -= 1;
+            if (count >= 0) {
+                $("#num").html(count);
+            }
+        }, 1000);
+
         // 지정된 시간 후 한 번만 실행
         setTimeout(function () {
             $(".alert").hide();
         }, 5000);
 
         // 지정된 시간마다 실행
-        setInterval(function () {
-            console.log('웰컴 크리스마스');
-        }, 1000);
+        // setInterval(function () {
+        //     console.log('웰컴 크리스마스');
+        // }, 1000);
 
         // 콜백함수 자리엔 만들어둔 함수 넣기 가능
-        setTimeout(인사, 1000);
-        function 인사() {
-            console.log('hello');
-        }
+        // setTimeout(인사, 1000);
+        // function 인사() {
+        //     console.log('hello');
+        // }
 
     </script>
 
