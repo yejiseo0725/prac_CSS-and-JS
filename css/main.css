@@ -36,3 +36,18 @@
   visibility: visible;
   opacity: 1;
 }
+
+.slide-container {
+  width: 300vw;
+  transition: all 1s;
+}
+.slide-box {
+  width: 100vw;
+  height: 600px;
+  float: left;
+}
+img.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
