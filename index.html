@@ -85,7 +85,27 @@
         <button class="before">이전</button>
     </div>
 
+    <div style="height: 1000px;"></div>
+
     <script>
+
+        window.addEventListener('scroll', function () {
+            console.log(window.scrollY);
+            // 강제된 위치로 스크롤
+            window.scrollTo(0, 300);
+            // 현재 위치부터 강제로 스크롤
+            window.scrollBy(0, 100);
+        });
+
+        $(window).on('scroll', function () {
+            // 현재 스크롤바 위치 출력
+            $(window).scrollTop();
+        })
+
+    </script>
+
+
+    <!-- <script>
 
         // return 문법
         // 함수 쓰고 난 자리에 뭔가 '퉤' 뱉고 싶으면 return 사용
@@ -133,11 +153,7 @@
         $('.slide-3').on('click', function () {
             $('.slide-container').css('transform', 'translateX(-200vw)');
         });
-    </script>
-
-
-
-
+    </script> -->
 
     <script>
 

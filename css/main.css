@@ -1,3 +1,16 @@
+:root {
+  scroll-behavior: auto;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+}
+.navbar-brand {
+  font-size: 2rem;
+}
+
 .main-bg {
   padding: 100px 20px;
   background: lightgrey;
