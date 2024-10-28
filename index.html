@@ -85,23 +85,58 @@
         <button class="before">이전</button>
     </div>
 
+    <!-- 회원약관 -->
+    <div class="lorem" style="width: 300px; height: 100px; overflow-y: scroll;">Lorem ipsum dolor sit amet consectetur
+        adipisicing
+        elit. Cupiditate praesentium totam dolores rem voluptate,
+        magni, amet minima, neque laborum architecto facere alias aspernatur. Ipsa, reiciendis. Doloremque officiis odio
+        nesciunt consequuntur sit molestias suscipit, voluptatibus eligendi reprehenderit natus, numquam sapiente est
+        ratione illo assumenda magnam dicta reiciendis velit soluta repellat. Debitis voluptate quisquam, ratione
+        rerum enim eum accusantium illo a ab illum, neque nostrum? Maiores,
+        earum. Ea, nesciunt inventore.</div>
+
     <div style="height: 1000px;"></div>
 
     <script>
 
+        document.querySelector('.lorem').addEventListener('scroll', function () {
+            let scrollTop = document.querySelector('.lorem').scrollTop; // 스크롤 양
+            let scrollHeight = document.querySelector('.lorem').scrollHeight; // 스크롤 실제높이
+            console.log(scrollTop, scrollHeight);
+
+            if (scrollTop + 100 == scrollHeight) {
+                alert('끝');
+            }
+        });
+
+    </script>
+
+    <script>
         window.addEventListener('scroll', function () {
-            console.log(window.scrollY);
+
+            let navTitle = document.querySelector('.navbar-brand');
+            let navTitleSize = navTitle.style.fontSize;
+            let scrollYLocation = window.scrollY;
+
+            // console.log(navTitleSize, scrollYLocation);
+
+            if (scrollYLocation >= 100) {
+                navTitleSize = "1rem";
+            } else {
+                navTitleSize = "2rem";
+            }
+
+
             // 강제된 위치로 스크롤
-            window.scrollTo(0, 300);
+            // window.scrollTo(0, 300);
             // 현재 위치부터 강제로 스크롤
-            window.scrollBy(0, 100);
+            // window.scrollBy(0, 100);
         });
 
         $(window).on('scroll', function () {
             // 현재 스크롤바 위치 출력
             $(window).scrollTop();
         })
-
     </script>
 
 
