@@ -102,6 +102,8 @@
         document.querySelector('.lorem').addEventListener('scroll', function () {
             let scrollTop = document.querySelector('.lorem').scrollTop; // 스크롤 양
             let scrollHeight = document.querySelector('.lorem').scrollHeight; // 스크롤 실제높이
+            let sightHeight = document.querySelector('.lorem').clientHeight // 눈에 보이는 높이
+
             console.log(scrollTop, scrollHeight);
 
             if (scrollTop + 100 == scrollHeight) {
@@ -115,15 +117,14 @@
         window.addEventListener('scroll', function () {
 
             let navTitle = document.querySelector('.navbar-brand');
-            let navTitleSize = navTitle.style.fontSize;
             let scrollYLocation = window.scrollY;
 
             // console.log(navTitleSize, scrollYLocation);
 
-            if (scrollYLocation >= 100) {
-                navTitleSize = "1rem";
+            if (scrollYLocation > 100) {
+                navTitle.style.fontSize = "1rem";
             } else {
-                navTitleSize = "2rem";
+                navTitle.style.fontSize = "2rem";
             }
 
 
