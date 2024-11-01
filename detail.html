@@ -39,33 +39,40 @@
     </div>
 
     <script>
-        // 버튼0 누르면 
-        // - 모든버튼 에 붙은 color 클래스명 제거
-        // - 버튼0 에 color 클래스명 추가
-        // - 모든div 에 붙은 show 클래스명 제거
-        // - div0 에 show 클래스명 추가
+
+        let tapButton = $('.tab-button');
+        let tapContent = $('.tab-content');
+
+        for (let i = 0; i < 3; i++) {
+            $(tapButton).eq(i).on('click', function () {
+                $(tapButton).removeClass('color');
+                $(tapButton).eq(i).addClass('color');
+                $(tapContent).removeClass('show');
+                $(tapContent).eq(i).addClass('show');
+            });
+        }
 
         // // === querySelectorAll('.tab-button')[0]
-        $('.tab-button').eq(0).on('click', function () {
-            $('.tab-button').removeClass('color');
-            $(this).addClass('color');
-            $('.tab-content').removeClass('show');
-            $('.tab-content').eq(0).addClass('show');
-        });
+        // $('.tab-button').eq(0).on('click', function () {
+        //     $('.tab-button').removeClass('color');
+        //     $(this).addClass('color');
+        //     $('.tab-content').removeClass('show');
+        //     $('.tab-content').eq(0).addClass('show');
+        // });
 
-        $('.tab-button').eq(1).on('click', function () {
-            $('.tab-button').removeClass('color');
-            $(this).addClass('color');
-            $('.tab-content').removeClass('show');
-            $('.tab-content').eq(1).addClass('show');
-        });
+        // $('.tab-button').eq(1).on('click', function () {
+        //     $('.tab-button').removeClass('color');
+        //     $(this).addClass('color');
+        //     $('.tab-content').removeClass('show');
+        //     $('.tab-content').eq(1).addClass('show');
+        // });
 
-        $('.tab-button').eq(2).on('click', function () {
-            $('.tab-button').removeClass('color');
-            $(this).addClass('color');
-            $('.tab-content').removeClass('show');
-            $('.tab-content').eq(2).addClass('show');
-        });
+        // $('.tab-button').eq(2).on('click', function () {
+        //     $('.tab-button').removeClass('color');
+        //     $(this).addClass('color');
+        //     $('.tab-content').removeClass('show');
+        //     $('.tab-content').eq(2).addClass('show');
+        // });
 
     </script>
 
