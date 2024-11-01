@@ -27,13 +27,13 @@
             <li class="tab-button color">Information</li>
             <li class="tab-button">Shipping</li>
         </ul>
-        <div class="tab-content content1">
+        <div class="tab-content">
             <p>상품설명입니다. Product</p>
         </div>
-        <div class="tab-content content2 show">
+        <div class="tab-content show">
             <p>스펙설명입니다. Information</p>
         </div>
-        <div class="tab-content content3">
+        <div class="tab-content">
             <p>배송정보입니다. Shipping</p>
         </div>
     </div>
@@ -47,30 +47,24 @@
 
         // // === querySelectorAll('.tab-button')[0]
         $('.tab-button').eq(0).on('click', function () {
-            $(this).addClass("color");
-            $('.tab-button').eq(1).removeClass("color");
-            $('.tab-button').eq(2).removeClass("color");
-
-            $('.tab-content').removeClass("show");
-            $('.content1').addClass("show");
+            $('.tab-button').removeClass('color');
+            $(this).addClass('color');
+            $('.tab-content').removeClass('show');
+            $('.tab-content').eq(0).addClass('show');
         });
 
         $('.tab-button').eq(1).on('click', function () {
-            $(this).addClass("color");
-            $('.tab-button').eq(0).removeClass("color");
-            $('.tab-button').eq(2).removeClass("color");
-
-            $('.tab-content').removeClass("show");
-            $('.content2').addClass("show");
+            $('.tab-button').removeClass('color');
+            $(this).addClass('color');
+            $('.tab-content').removeClass('show');
+            $('.tab-content').eq(1).addClass('show');
         });
 
         $('.tab-button').eq(2).on('click', function () {
-            $(this).addClass("color");
-            $('.tab-button').eq(0).removeClass("color");
-            $('.tab-button').eq(1).removeClass("color");
-
-            $('.tab-content').removeClass("show");
-            $('.content3').addClass("show");
+            $('.tab-button').removeClass('color');
+            $(this).addClass('color');
+            $('.tab-content').removeClass('show');
+            $('.tab-content').eq(2).addClass('show');
         });
 
     </script>
