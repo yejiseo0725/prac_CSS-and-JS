@@ -14,6 +14,7 @@
     <!-- JQuery cdn -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- <script type="javascript" src="js/tab.js"></script> -->
 
     <title>Hello, world!</title>
 </head>
@@ -37,7 +38,27 @@
         </div>
     </div>
 
-    <script src="js/tab.js"></script>
+    <script>
+        // // === querySelectorAll('.tab-button')[0]
+        $('.tab-button').eq(0).on('click', function () {
+            $(this).addClass("color");
+            $('.tab-button').eq(1).removeClass("color");
+            $('.tab-button').eq(2).removeClass("color");
+        });
+
+        $('.tab-button').eq(1).on('click', function () {
+            $(this).addClass("color");
+            $('.tab-button').eq(0).removeClass("color");
+            $('.tab-button').eq(2).removeClass("color");
+        });
+
+        $('.tab-button').eq(2).on('click', function () {
+            $(this).addClass("color");
+            $('.tab-button').eq(0).removeClass("color");
+            $('.tab-button').eq(1).removeClass("color");
+        });
+
+    </script>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
