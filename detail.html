@@ -22,10 +22,12 @@
 <body>
 
     <div class="container mt-5">
+        <!-- html tag 에 몰래 정보 숨기기: data-자료이름="값" -->
+        <!-- 숨겨둔 자료 출력: 셀렉터.dataset.자료이름 -->
         <ul class="list">
-            <li class="tab-button">Products</li>
-            <li class="tab-button color">Information</li>
-            <li class="tab-button">Shipping</li>
+            <li class="tab-button" data-id="0">Products</li>
+            <li class="tab-button color" data-id="1">Information</li>
+            <li class="tab-button" data-id="2">Shipping</li>
         </ul>
         <div class="tab-content">
             <p>상품설명입니다. Product</p>
@@ -43,13 +45,23 @@
         let tapButton = $('.tab-button');
         let tapContent = $('.tab-content');
 
-        for (let i = 0; i < 3; i++) {
-            $(tapButton).eq(i).on('click', function () {
-                $(tapButton).removeClass('color');
-                $(tapButton).eq(i).addClass('color');
-                $(tapContent).removeClass('show');
-                $(tapContent).eq(i).addClass('show');
-            });
+        $('.list').click(function (e) {
+            console.log(e.target.dataset.id);
+            openTab(e.target.dataset.id);
+        });
+
+        // for (let i = 0; i < 3; i++) {
+        //     $(tapButton).eq(i).on('click', function () {
+        //         openTab(i);
+        //     });
+        // }
+
+        // 축약할 코드에 변수가 있으면 그 변수를 파라미터로 바꿔야 잘 됩니다
+        function openTab(num) {
+            $(tapButton).removeClass('color');
+            $(tapButton).eq(num).addClass('color');
+            $(tapContent).removeClass('show');
+            $(tapContent).eq(num).addClass('show');
         }
 
     </script>
