@@ -97,7 +97,7 @@
 
     <div style="height: 1000px;"></div>
 
-    <script>
+    <!-- <script>
 
         document.querySelector('.lorem').addEventListener('scroll', function () {
             let scrollTop = document.querySelector('.lorem').scrollTop; // 스크롤 양
@@ -111,9 +111,9 @@
             }
         });
 
-    </script>
+    </script> -->
 
-    <script>
+    <!-- <script>
         window.addEventListener('scroll', function () {
 
             let navTitle = document.querySelector('.navbar-brand');
@@ -127,7 +127,6 @@
                 navTitle.style.fontSize = "2rem";
             }
 
-
             // 강제된 위치로 스크롤
             // window.scrollTo(0, 300);
             // 현재 위치부터 강제로 스크롤
@@ -138,7 +137,7 @@
             // 현재 스크롤바 위치 출력
             $(window).scrollTop();
         })
-    </script>
+    </script> -->
 
 
     <!-- <script>
@@ -210,11 +209,25 @@
         });
 
         // Login Modal 창 띄우기
-        $('#login').on('click', function () {
-            $('.black-bg').addClass('show');
+        document.querySelector('#login').addEventListener('click', function () {
+            document.querySelector('.black-bg').classList.add('show');
         });
-        $('#close').on('click', function () {
-            $('.black-bg').removeClass('show');
+
+        // Login Modal 검은 배경 클릭 시 Modal 창 닫기 ---> Event Bubbling
+        document.querySelector('.black-bg').addEventListener('click', function (e) {
+
+            const blackBg = document.querySelector('.black-bg');
+
+            if (e.target == black) {
+                document.querySelector('.black-bg').classList.remove('show');
+
+                // e.target; // 유저가 실제로 누른 것
+                // e.currentTarget; // 이벤트리스너 달린 곳 === this
+                // e.preventDefault(); // 이벤트 기본동작 막아줌 (submit 안 된 것 처럼)
+                // e.stopPropagation(); // 내 상위 요소로 이벤트 버블링 막아줌!
+
+            }
+
         });
 
         // Login Input 전송 받기
