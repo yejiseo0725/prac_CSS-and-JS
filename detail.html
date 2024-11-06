@@ -22,6 +22,12 @@
 <body>
 
     <div class="container mt-5">
+        <div class="card p-3">
+            상품명 / 가격
+        </div>
+    </div>
+
+    <div class="container mt-5">
         <!-- html tag 에 몰래 정보 숨기기: data-자료이름="값" -->
         <!-- 숨겨둔 자료 출력: 셀렉터.dataset.자료이름 -->
         <ul class="list">
@@ -39,6 +45,20 @@
             <p>배송정보입니다. Shipping</p>
         </div>
     </div>
+
+    <script>
+
+        // Array 자료형 | 순서o, sort, slice...
+        let car = ['소나타', 50000, 'white'];
+        car.sort();
+        // Object 자료형 ---> key : value | 순서x
+        let car2 = { name: '볼보', price: 75000 };
+
+        // ---> 저장, 수정, 출력만 할 줄 알면 됨.
+        console.log(car);
+        console.log(car2.price);
+
+    </script>
 
     <script>
 
