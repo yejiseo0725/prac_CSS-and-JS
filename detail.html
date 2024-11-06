@@ -23,7 +23,8 @@
 
     <div class="container mt-5">
         <div class="card p-3">
-            상품명 / 가격
+            <strong><span class="car-title">상품명</span></strong>
+            <span class="car-price">가격</span>
         </div>
     </div>
 
@@ -48,15 +49,11 @@
 
     <script>
 
-        // Array 자료형 | 순서o, sort, slice...
-        let car = ['소나타', 50000, 'white'];
-        car.sort();
-        // Object 자료형 ---> key : value | 순서x
-        let car2 = { name: '볼보', price: 75000 };
-
-        // ---> 저장, 수정, 출력만 할 줄 알면 됨.
-        console.log(car);
-        console.log(car2.price);
+        // Data Binding
+        // Client-Side Rendering
+        let car2 = { name: '소나타', price: [50000, 300, 75000] };
+        // document.querySelector('.car-title').innerHTML = car2.name;
+        document.querySelector('.car-price').innerHTML = car2.price[1];
 
     </script>
 
