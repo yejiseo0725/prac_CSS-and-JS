@@ -17,6 +17,12 @@
     <!-- <script type="javascript" src="js/tab.js"></script> -->
 
     <title>Hello, world!</title>
+
+    <style>
+        .form-hide {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,6 +33,19 @@
             <span class="car-price">가격</span>
         </div>
     </div>
+
+    <form class="container my-5 form-group">
+        <p>상품선택</p>
+        <select class="form-select mt-2">
+            <option>모자</option>
+            <option>셔츠</option>
+        </select>
+        <select class="form-select mt-2 form-hide">
+            <option>90</option>
+            <option>95</option>
+            <option>100</option>
+        </select>
+    </form>
 
     <div class="container mt-5">
         <!-- html tag 에 몰래 정보 숨기기: data-자료이름="값" -->
@@ -46,6 +65,18 @@
             <p>배송정보입니다. Shipping</p>
         </div>
     </div>
+
+    <script>
+
+        // input 값 변경될 때 마다 input event 실행
+        $('.form-select').eq(0).on('input', function () {
+            let val = $('.form-select').eq(0).val();
+            if (val == '셔츠') {
+                $('.form-select').eq(1).removeClass('form-hide');
+            }
+        });
+
+    </script>
 
     <script>
 
