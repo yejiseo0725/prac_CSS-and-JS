@@ -69,8 +69,8 @@
     <script>
 
         // input 값 변경될 때 마다 input event 실행
-        $('.form-select').eq(0).on('input', function () {
-            let val = $('.form-select').eq(0).val();
+        $('.form-select').eq(0).on('input', function (e) {
+            let val = e.currentTarget.value;
             if (val == '셔츠') {
                 $('.form-select').eq(1).removeClass('form-hide');
             }
