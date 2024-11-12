@@ -114,11 +114,33 @@
 
     <script>
 
-        for (let k = 2; k <= 9; k++) {
-            for (let i = 1; i <= 9; i++) {
-                console.log(k * i);
+        function checkScore(arr, b) {
+            let result = 0;
+
+            for (let i = 0; i < arr.length; i++) {
+                result = result + arr[i] / arr.length;
             }
-        }
+            // console.log(result);
+            if (result < b) {
+                console.log(`기존 평균보다 올랐네요!`);
+            } else if (result > b) {
+                console.log(`기존 평균보다 떨어졌네요. 재수추천ㅋ`);
+            } else {
+                console.log('점수가 그대로네요. 분발해..');
+            }
+        };
+        checkScore([20, 30, 40], 10);
+        checkScore([20, 30, 40], 80);
+
+    </script>
+
+    <script>
+
+        // for (let k = 2; k <= 9; k++) {
+        //     for (let i = 1; i <= 9; i++) {
+        //         console.log(k * i);
+        //     }
+        // }
 
     </script>
 
