@@ -104,11 +104,30 @@
             }
         });
 
-        let obj = { name: 'kim', age: 20 };
-        // object 자료 갯수만큼 반복문 돌리려면
-        for (let key in obj) {
-            console.log(obj[key]);
-        }
+        // let obj = { name: 'kim', age: 20 };
+        // // object 자료 갯수만큼 반복문 돌리려면
+        // for (let key in obj) {
+        //     console.log(obj[key]);
+        // }
+
+    </script>
+
+    <script>
+
+        let attendance = ['흥민', '영희', '철수', '재석'];
+
+        function findName(name) {
+            for (let i = 0; i < attendance.length; i++) {
+                if (name == '흥민' || name == '영희' || name == '철수' || name == '재석') {
+                    console.log('있어요(하트)');
+                } else {
+                    console.log('없네요...');
+                }
+            };
+        };
+
+        findName('흥민');
+        findName('예지');
 
     </script>
 
