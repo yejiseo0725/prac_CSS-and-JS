@@ -114,6 +114,7 @@
 
     <script>
 
+        // array 평균점수 계산기
         function checkScore(arr, b) {
             let result = 0;
 
@@ -136,30 +137,32 @@
 
     <script>
 
-        // for (let k = 2; k <= 9; k++) {
-        //     for (let i = 1; i <= 9; i++) {
-        //         console.log(k * i);
-        //     }
-        // }
+        // 구구단: 2단부터 9단까지
+        for (let k = 2; k <= 9; k++) {
+            for (let i = 1; i <= 9; i++) {
+                console.log(k * i);
+            }
+        }
 
     </script>
 
     <script>
 
-        // let attendance = ['흥민', '영희', '철수', '재석'];
+        // 출석부의 '이름' 여부 확인하기
+        let attendance = ['흥민', '영희', '철수', '재석'];
 
-        // function findName(name) {
-        //     for (let i = 0; i < attendance.length; i++) {
-        //         if (name == '흥민' || name == '영희' || name == '철수' || name == '재석') {
-        //             console.log('있어요(하트)');
-        //         } else {
-        //             console.log('없네요...');
-        //         }
-        //     };
-        // };
+        function findName(name) {
+            for (let i = 0; i < attendance.length; i++) {
+                if (name == '흥민' || name == '영희' || name == '철수' || name == '재석') {
+                    console.log('있어요(하트)');
+                } else {
+                    console.log('없네요...');
+                }
+            };
+        };
 
-        // findName('흥민');
-        // findName('예지');
+        findName('흥민');
+        findName('예지');
 
     </script>
 
