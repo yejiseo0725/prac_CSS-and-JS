@@ -74,31 +74,41 @@
 
     <script>
 
+        let pants = [28, 30, 32, 34, 36];
+        let shirt = [95, 100, 105];
+
         // JS 로 html 생성법 2
         let temp = '<p>hello@@@</p>';
         document.querySelector('#test').insertAdjacentHTML('beforeend', temp); // (1)
         $('#test').append(temp); // (2)
 
         // input 값 변경될 때 마다 input event 실행
-        $('.form-select').eq(0).on('input', function (e) {
-            let val = e.currentTarget.value;
+        $('.form-select').eq(0).on('input', function () {
+            let val = this.value;
             if (val == '셔츠') {
                 $('.form-select').eq(1).removeClass('form-hide');
             } else if (val == '반바지') {
                 $('.form-select').eq(1).removeClass('form-hide');
                 $('.form-select').eq(1).html('');
-                let opt = `<option>28</option>
-                <option>30</option>
-                <option>32</option>`;
-                $('.form-select').eq(1).append(opt);
-            } else {
-                //     $('.form-select').eq(1).html('');
-                //     let stdopt = `<option>90</option>
-                // <option>95</option>
-                // <option>100</option>`;
-                //     $('.form-select').eq(1).append(stdopt);
+
+                // forEach 안의 파라미터 2개: (1) array 안의 데이터 (2) 0부터 1씩 증가하는 정수
+                pants.forEach(function (item) {
+                    console.log(item);
+                    $('.form-select').eq(1).append(`<option>${item}</option>`);
+                });
+                // arrow funtion
+                pants.forEach((item) => {
+                    console.log(item);
+                    $('.form-select').eq(1).append(`<option>${item}</option>`);
+                });
             }
         });
+
+        let obj = { name: 'kim', age: 20 };
+        // object 자료 갯수만큼 반복문 돌리려면
+        for (let key in obj) {
+            console.log(obj[key]);
+        }
 
     </script>
 
