@@ -24,23 +24,78 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-sm-4">
+            <!-- <div class="col-sm-4">
                 <img src="https://via.placeholder.com/600" class="w-100">
                 <h5>Card title</h5>
                 <p>가격 : 70000</p>
-            </div>
+            </div> -->
 
         </div>
     </div>
 
     <script>
-        var products = [
+        let products = [
             { id: 0, price: 75000, title: 'Blossom Dress' },
             { id: 1, price: 50000, title: 'Springfield Shirt' },
             { id: 2, price: 60000, title: 'Black Monastery' }
         ];
 
-        // 카드 레이아웃 3개 만들기
+        products.forEach((a, i) => {
+            let temp =
+                `<div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>${products[i].title}</h5>
+                <p>가격 : ${products[i].price}</p>
+            </div>`;
+            // products[i].title == a.title
+            $('.row').append(temp);
+        });
+
+    </script>
+
+    <div class="container">
+        <button class="btn btn-danger" id="more">MORE</button>
+    </div>
+
+    <script>
+
+        // 유저의 버튼 클릭 횟수 기록
+        let userCnt = 0;
+        const moreBtn = document.querySelector('#more');
+
+        function userClickCounter() {
+            userCnt += 1;
+            console.log(userCnt);
+        };
+        moreBtn.addEventListener("click", userClickCounter);
+
+        // 유저 클릭 횟수 == 1일 때, 2일 때, 3일 때
+        if (userCnt == 1) {
+            // 4,5,6 data 를 html 로 보여주기
+        } else if (userCnt == 2) {
+            // 7,8,9 data 를 html 로 보여주기
+        } else if (userCnt >= 3) {
+            // hide more button
+        };
+
+        const moreBtnClickHandler = () => {
+            // script code 안에 작성하면, 페이지 로드 시 1회 실행
+            $.get('https://codingapple1.github.io/js/more1.json').done(function (newData) {
+                // console.log(data);
+                newData.forEach((a, i) => {
+                    let newTemp =
+                        `<div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>${newData[i].title}</h5>
+                <p>가격 : ${newData[i].price}</p>
+            </div>`;
+                    $('.row').append(newTemp);
+                });
+
+            });
+        }
+
+        btnMore.addEventListener('click', moreBtnClickHandler);
 
     </script>
 
