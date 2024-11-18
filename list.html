@@ -62,40 +62,66 @@
         // 유저의 버튼 클릭 횟수 기록
         let userCnt = 0;
         const moreBtn = document.querySelector('#more');
+        const addData1 = $.get('https://codingapple1.github.io/js/more1.json');
+        const addData2 = $.get('https://codingapple1.github.io/js/more2.json');
 
         function userClickCounter() {
             userCnt += 1;
             console.log(userCnt);
-        };
-        moreBtn.addEventListener("click", userClickCounter);
 
-        // 유저 클릭 횟수 == 1일 때, 2일 때, 3일 때
-        if (userCnt == 1) {
-            // 4,5,6 data 를 html 로 보여주기
-        } else if (userCnt == 2) {
-            // 7,8,9 data 를 html 로 보여주기
-        } else if (userCnt >= 3) {
-            // hide more button
-        };
-
-        const moreBtnClickHandler = () => {
-            // script code 안에 작성하면, 페이지 로드 시 1회 실행
-            $.get('https://codingapple1.github.io/js/more1.json').done(function (newData) {
-                // console.log(data);
-                newData.forEach((a, i) => {
-                    let newTemp =
-                        `<div class="col-sm-4">
+            // 유저 클릭 횟수 == 1일 때, 2일 때, 3일 때
+            if (userCnt == 1) {
+                // 4,5,6 data 를 html 로 보여주기
+                addData1.done(function (newData) {
+                    newData.forEach((a, i) => {
+                        let newTemp =
+                            `<div class="col-sm-4">
                 <img src="https://via.placeholder.com/600" class="w-100">
                 <h5>${newData[i].title}</h5>
                 <p>가격 : ${newData[i].price}</p>
             </div>`;
-                    $('.row').append(newTemp);
+                        $('.row').append(newTemp);
+                    });
                 });
+            } else if (userCnt == 2) {
+                // 7,8,9 data 를 html 로 보여주기
+                addData2.done(function (newData) {
+                    newData.forEach((a, i) => {
+                        let newTemp =
+                            `<div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>${newData[i].title}</h5>
+                <p>가격 : ${newData[i].price}</p>
+            </div>`;
+                        $('.row').append(newTemp);
+                    });
+                });
+            } else if (userCnt >= 3) {
+                // hide more button
+                moreBtn.style.display = 'none';
+            };
+        };
+        moreBtn.addEventListener("click", userClickCounter);
 
-            });
-        }
 
-        btnMore.addEventListener('click', moreBtnClickHandler);
+        // const moreBtnClickHandler = () => {
+        //     // script code 안에 작성하면, 페이지 로드 시 1회 실행
+        //     $.get('https://codingapple1.github.io/js/more1.json').done(function (newData) {
+        //         // console.log(data);
+        //         newData.forEach((a, i) => {
+        //             let newTemp =
+        //                 `<div class="col-sm-4">
+        //         <img src="https://via.placeholder.com/600" class="w-100">
+        //         <h5>${newData[i].title}</h5>
+        //         <p>가격 : ${newData[i].price}</p>
+        //     </div>`;
+        //             $('.row').append(newTemp);
+        //         });
+
+        //     });
+        // }
+
+        // btnMore.addEventListener('click', moreBtnClickHandler);
 
     </script>
 
