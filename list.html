@@ -40,6 +40,25 @@
             { id: 2, price: 60000, title: 'Black Monastery' }
         ];
 
+        let arr = [7, 3, 5, 2, 40];
+        let arr2 = ['a', 'c', 'b'];
+
+        arr.sort(function (a, b) {
+            // return 오른쪽이 양수면 a를 오른쪽으로 보냄 (오름차순)
+            // return b - a ---> 숫자 내림차순 정렬
+            return a - b;
+        });
+        arr2.sort();
+        // 'a' < 'b' == true (문자 비교 가능)
+        console.log(arr2);
+
+
+
+
+
+
+
+
         products.forEach((a, i) => {
             let temp =
                 `<div class="col-sm-4">
