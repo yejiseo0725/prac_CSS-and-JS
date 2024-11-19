@@ -33,6 +33,10 @@
         </div>
     </div>
 
+    <div class="container my-3">
+        <button class="btn btn-danger" id="price">가격순정렬</button>
+    </div>
+
     <script>
         let products = [
             { id: 0, price: 75000, title: 'Blossom Dress' },
@@ -40,35 +44,46 @@
             { id: 2, price: 60000, title: 'Black Monastery' }
         ];
 
-        let arr = [7, 3, 5, 2, 40];
-        let arr2 = ['a', 'c', 'b'];
+        $('#price').click(function () {
+            products.sort(function (a, b) {
+                return a.price - b.price;
+            });
 
-        arr.sort(function (a, b) {
-            // return 오른쪽이 양수면 a를 오른쪽으로 보냄 (오름차순)
-            // return b - a ---> 숫자 내림차순 정렬
-            return a - b;
-        });
-        arr2.sort();
-        // 'a' < 'b' == true (문자 비교 가능)
-        console.log(arr2);
+            $('.row').html('');
 
-
-
-
-
-
-
-
-        products.forEach((a, i) => {
-            let temp =
-                `<div class="col-sm-4">
+            products.forEach((a, i) => {
+                let temp =
+                    `<div class="col-sm-4">
                 <img src="https://via.placeholder.com/600" class="w-100">
                 <h5>${products[i].title}</h5>
                 <p>가격 : ${products[i].price}</p>
             </div>`;
-            // products[i].title == a.title
-            $('.row').append(temp);
+                // products[i].title == a.title
+                $('.row').append(temp);
+            });
         });
+
+        // console.log(products);
+
+        let arr = [7, 3, 5, 2, 40];
+        let arr2 = ['a', 'c', 'b'];
+
+        // array 자료 중 원하는 것만 필터 하려면
+        // filter() 결과는 변수 만들어서 저장하는 것이 필수
+        let newarr = arr.filter(function (a) {
+            return a < 4;
+        });
+        console.log(newarr);
+
+        // arr.sort(function (a, b) {
+        //     // return 오른쪽이 양수면 a를 오른쪽으로 보냄 (오름차순)
+        //     // return b - a ---> 숫자 내림차순 정렬
+        //     return a - b;
+        // });
+        // arr2.sort();
+        // 'a' < 'b' == true (문자 비교 가능)
+        // console.log(arr2);
+
 
     </script>
 
