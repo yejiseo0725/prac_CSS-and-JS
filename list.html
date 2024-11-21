@@ -51,6 +51,34 @@
             { id: 2, price: 60000, title: 'Black Monastery' }
         ];
 
+        products.forEach((a, i) => {
+            let temp =
+                `<div class="col-sm-4">
+                    <img src="https://via.placeholder.com/600" class="w-100">
+                    <h5>${products[i].title}</h5>
+                    <p>가격 : ${products[i].price}</p>
+                    <button class="buy">구매</button>
+                    </div>`;
+            $('.row').append(temp);
+        });
+
+        // 브라우저 안에 몰래 데이터 저장 가능
+        // f12_Application: localStorage, sessionStorage
+        // 용량은 5MB, 문자/숫자만 저장 가능
+
+        localStorage.setItem('이름', 'yeji');
+        localStorage.getItem('이름');
+        localStorage.removeItem('이름');
+
+        // ! array, object 저장하려면
+        // array/object --> json 으로 바꾸면 저장 가능
+        let array = [11, 22, 33];
+        let newArray = JSON.stringify(array);
+
+        localStorage.setItem('num', newArray);
+        let loc = localStorage.getItem('num');
+        console.log(JSON.parse(loc)[0]);
+
         $('#filter').click(function () {
             let newProduct = products.filter(function (a) {
                 return a.price <= 60000
