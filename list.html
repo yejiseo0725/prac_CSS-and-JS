@@ -62,6 +62,32 @@
             $('.row').append(temp);
         });
 
+        // document.querySelectorAll('.buy')[0] (이벤트 버블링 방지)
+        $('.buy').click(function (e) {
+            let title = $(e.target).siblings('h5').text();
+
+            if (localStorage.getItem('cart') != null) {
+                var cc = JSON.parse(localStorage.cart);
+                cc.push(title);
+                localStorage.setItem('cart', JSON.stringify(cc));
+            } else {
+                localStorage.setItem('cart', JSON.stringify([title]));
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // 브라우저 안에 몰래 데이터 저장 가능
         // f12_Application: localStorage, sessionStorage
         // 용량은 5MB, 문자/숫자만 저장 가능
