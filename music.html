@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JQuery cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Apple Music UI</title>
+</head>
+
+<body>
+
+    <div class="card-background">
+
+        <h1>It's as easy<br>as it sounds.</h1>
+
+        <div class="card-box">
+            <img src="/image/card1.png" alt="card1">
+        </div>
+        <div class="card-box">
+            <img src="/image/card2.png" alt="card2">
+        </div>
+        <div class="card-box">
+            <img src="/image/card3.png" alt="card3">
+        </div>
+
+    </div>
+
+    <script>
+
+        $(window).scroll(function () {
+            let height = $(window).scrollTop();
+            console.log(height);
+
+            // 650 ~ 1150 ---> 카드1 opacity 1~0 으로 서서히 변경
+            let y = (-1 / 500) * height + 115 / 50;
+            $('.card-box').eq(0).css('opacity', y);
+
+            let z = (-1 / 5000) * height + 565 / 500;
+            $('.card-box').eq(0).css('transform', `scale(${z})`);
+        });
+
+    </script>
+
+</body>
+
+</html>

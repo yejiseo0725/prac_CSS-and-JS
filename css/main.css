@@ -64,3 +64,30 @@ img.slide-img {
   height: 100%;
   object-fit: cover;
 }
+
+/* Apple Music UI */
+
+.card-background {
+  height: 3000px;
+  margin-top: 800px;
+  margin-bottom: 1600px;
+}
+
+h1 {
+  position: sticky;
+  top: 240px;
+  text-align: center;
+  font-size: 3.4rem;
+}
+
+.card-box {
+  position: sticky;
+  top: 400px;
+  margin-top: 200px;
+  transition: all 0.2s;
+}
+.card-box img {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+}
