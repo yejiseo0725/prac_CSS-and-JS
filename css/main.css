@@ -50,9 +50,11 @@
   opacity: 1;
 }
 
+/* Carousel */
+
 .slide-container {
   width: 300vw;
-  transition: all 1s;
+  /* transition: all 1s; */
 }
 .slide-box {
   width: 100vw;
