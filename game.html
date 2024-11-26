@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="quiz">
+        <h3>물에 빠지면 누구부터 구할까?</h3>
+        <button>엄마</button>
+        <button>아빠</button>
+        <button>울 애기</button>
+    </div>
+
+    <script>
+
+        document.querySelector('#quiz').addEventListener('click', function (e) {
+
+            switch (e.target.innerHTML) {
+                case '엄마':
+                    alert('엄마 좋아');
+                    break
+                case '아빠':
+                    alert('효자');
+                    break
+                case '울 애기':
+                    alert('애기가 보고 싶네요');
+                    break
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
