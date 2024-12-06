@@ -11,6 +11,7 @@
 <body>
 
     <div></div>
+    <button id="btn">버튼</button>
 
     <script>
 
@@ -18,25 +19,31 @@
         // (1) 그냥 쓰거나 일반 함수 안에서 쓰면 {window}
         // (2) 오브젝트 내 함수 안에서 쓰면 '그 함수를 가진 오브젝트' 를 뜻함 
         // --> function(){}: 상위 요소 보여줌, ()=>{}: 함수 밖의 this 값 그대로 사용 (새로 안 만듦)
+        // (3) 기계 안에서 쓰면 새로 생성되는 오브젝트를 의미 | 오브젝트 생성기계: constructor 
+        // (4) 이벤트리스너 안에서, 지금 이벤트 동작하는 곳 === e.currentTarget
 
-        // console.log(this);
+        document.getElementById('btn').addEventListener('click', function () {
 
-        function 함수() {
-            console.log(this)
-        }
-        함수();
-        window.함수();
-        // 함수, 변수를 전역공간에서 만들면 {window}에서 보관
+            // let arr = [1, 2, 3];
+            // arr.forEach(function (a) {
+            //     console.log(this);
+            // });
 
-        let obj = {
-            data: {
-                func: () => {
+            let obj = {
+                names: ['caveman', 'zero', 'x-ray'],
+                func: function () {
                     console.log(this);
+                    obj.names.forEach(() => {
+                        console.log(this);
+                        // 내부 this 값 변화시키지 않음 (arrow function)
+                        // --> 외부 this 값 그대로 사용
+                    })
                 }
             }
-        }
 
-        obj.data.func();
+            obj.func();
+
+        });
 
     </script>
 
