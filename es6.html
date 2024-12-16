@@ -15,14 +15,17 @@
 
     <script>
 
-        console.log(나이);
+        // template literals
+        // 문자열 다르게 제작하기
 
-        // 변수
-        // 선언, 할당, 범위
-        // Hoisting 현상: 변수 선언을 변수 범위 맨 위로 끌고오는 현상 (JS 특징)
+        var 변수 = 'Pedro';
+        var 문자 = `안녕하세요 ${변수} 입니다!`;
 
-        var 나이 = 30;
-        console.log(나이);
+        function 해체분석기(문자들, 변수들) {
+            console.log(문자들[1] + 변수들 + 문자들[0]);
+        }
+
+        해체분석기`안녕하세요 ${변수} 입니다!`
 
 
     </script>
