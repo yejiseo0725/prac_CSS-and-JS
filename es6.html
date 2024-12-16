@@ -19,15 +19,30 @@
         // (1) 코드들을 기능으로 묶기
         // (2) 입출력 기계 만들기
 
-        // arrow function
-        let func = a => a + 10;
-        // return 하나 밖에 없으면 {} 생략 가능!
-        console.log(func(6));
+        let person = {
+            name: 'son',
+            sayHi: function () {
+                console.log('hi im ' + this.name)
+            }
+        }
+        person.sayHi();
 
-        [1, 2, 3, 4].forEach(a => console.log(a));
+        let obj = {
+            data: [1, 2, 3, 4, 5]
+        };
 
-        document.getElementById('btn').addEventListener('click', (e) => {
-            console.log(this);
+        obj.전부더하기 = function () {
+            let sum = 0;
+            this.data.forEach(function (a) {
+                sum = sum + a;
+            });
+            console.log(sum);
+        }
+
+        obj.전부더하기();
+
+        document.getElementById('btn').addEventListener('click', function () {
+            setTimeout(() => { console.log(this.innerHTML) }, 1000);
         });
 
     </script>
