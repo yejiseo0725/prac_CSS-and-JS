@@ -15,35 +15,15 @@
 
     <script>
 
-        // 함수
-        // (1) 코드들을 기능으로 묶기
-        // (2) 입출력 기계 만들기
+        console.log(나이);
 
-        let person = {
-            name: 'son',
-            sayHi: function () {
-                console.log('hi im ' + this.name)
-            }
-        }
-        person.sayHi();
+        // 변수
+        // 선언, 할당, 범위
+        // Hoisting 현상: 변수 선언을 변수 범위 맨 위로 끌고오는 현상 (JS 특징)
 
-        let obj = {
-            data: [1, 2, 3, 4, 5]
-        };
+        var 나이 = 30;
+        console.log(나이);
 
-        obj.전부더하기 = function () {
-            let sum = 0;
-            this.data.forEach(function (a) {
-                sum = sum + a;
-            });
-            console.log(sum);
-        }
-
-        obj.전부더하기();
-
-        document.getElementById('btn').addEventListener('click', function () {
-            setTimeout(() => { console.log(this.innerHTML) }, 1000);
-        });
 
     </script>
 
