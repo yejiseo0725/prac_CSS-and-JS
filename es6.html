@@ -15,40 +15,15 @@
 
     <script>
 
-        // Spread Operator
-        // 1. Array 에 붙이면 대괄호 제거해 주거나, ''안의 문자를 한 글자씩 해체해 줌
-        // 2. Array 합치기 / 복사(deep copy)
-        // 각각 독립적인 값을 가지도록 Array, Object 복사하는 방법!
-        // 3. apply, call 비슷한데 apply 는 파라미터를 arr 형태로 집어넣는게 가능
-
-
-        // function plus(a, b, c) {
-        //     console.log(a + b + c);
-        // }
-
-        // let arr = [10, 20, 30];
-        // plus(arr[0], arr[1], arr[2]);
-
-        // plus.apply(undefined, arr);
-        // plus(...arr);
-
-        let per1 = {
-            greeting: function () {
-                console.log(this.name + ' hello');
-            }
+        function 임시() {
+            return 10
         }
 
-        let per2 = {
-            name: 'Pedro'
+        // default parameter --> 자리에 안 넣었을 때에만 발동
+        function 더하기(a, b = 임시()) {
+            console.log(a + b)
         }
-
-        per1.greeting.apply(per2, [1, 2]);
-        per1.greeting.call(per2, 1, 2);
-
-
-
-
-
+        더하기(3);
 
     </script>
 
