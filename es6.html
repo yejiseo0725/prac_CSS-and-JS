@@ -15,15 +15,24 @@
 
     <script>
 
-        function 임시() {
-            return 10
+        // arguments: 모든 파라미터를 한꺼번에 다루고 싶은 경우
+        // --> 입력한 파라미터를 전부 콘솔에 출력해주는 함수
+        function 함수(a, b, c) {
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
         }
+        함수(3, 15, 44);
 
-        // default parameter --> 자리에 안 넣었을 때에만 발동
-        function 더하기(a, b = 임시()) {
-            console.log(a + b)
-        }
-        더하기(3);
+        // function 임시() {
+        //     return 10
+        // }
+
+        // // default parameter --> 자리에 안 넣었을 때에만 발동
+        // function 더하기(a, b = 임시()) {
+        //     console.log(a + b)
+        // }
+        // 더하기(3);
 
     </script>
 
